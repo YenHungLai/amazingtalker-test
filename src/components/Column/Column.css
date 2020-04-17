@@ -1,0 +1,7 @@
+.column-container {
+	width: 600px;
+	height: 80px;
+	border-top: 4px solid #02cab9;
+	margin: 0 5px;
+	text-align: center;
+}

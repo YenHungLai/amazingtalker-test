@@ -1,0 +1,15 @@
+.controls-container button {
+	line-height: 1;
+	cursor: pointer;
+	color: #606266;
+	outline: none;
+	padding: 7px 15px;
+	font-size: 12px;
+	border-radius: 3px;
+	border: 1px solid #dcdfe6;
+}
+
+.controls-container button:hover {
+	color: #02cab9;
+	border-color: rgba(2, 202, 185, 0.95);
+}

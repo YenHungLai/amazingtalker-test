@@ -1,13 +1,27 @@
 import React from 'react';
+import './Controls.css';
 
-const Controls = () => {
+const Controls = ({ setCurSunday }) => {
+	const handleClick = (e) => {
+		if (e.target.id === 'left')
+			setCurSunday((prevState) => ({
+				...prevState,
+				date: prevState.date - 7,
+			}));
+		else
+			setCurSunday((prevState) => ({
+				...prevState,
+				date: prevState.date + 7,
+			}));
+	};
+
 	return (
 		<div className='controls-container'>
-			<button className='left'>
-				<i class='fas fa-chevron-left'></i>
+			<button id='left' onClick={handleClick}>
+				left
 			</button>
-			<button className='right'>
-				<i class='fas fa-chevron-right'></i>
+			<button id='right' onClick={handleClick}>
+				right
 			</button>
 		</div>
 	);

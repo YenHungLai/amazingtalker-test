@@ -1,11 +1,20 @@
-import React from 'react'
+import React from 'react';
+import './Schedule.css';
+// Components
+import Column from '../Column/Column';
 
-const Schedule = () => {
-    return (
-        <div className='schedule-container'>
-            
-        </div>
-    )
-}
+const Schedule = ({ scheduleData }) => {
+	return (
+		<div className='schedule-container'>
+			<Column />
+			<Column />
+			<Column />
+			<Column />
+			<Column />
+			<Column />
+			<Column />
+		</div>
+	);
+};
 
-export default Schedule
+export default Schedule;

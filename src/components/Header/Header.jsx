@@ -2,11 +2,11 @@ import React from 'react';
 // Components
 import Controls from '../Controls/Controls';
 
-const Header = () => {
+const Header = ({ setCurSunday }) => {
 	return (
 		<div className='header-container'>
 			<h3 className='title'>available times</h3>
-			<Controls />
+			<Controls setCurSunday={setCurSunday} />
 			<time dateTime=''></time>
 			<div className='timezone-info'></div>
 		</div>
