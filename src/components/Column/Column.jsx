@@ -2,7 +2,7 @@ import React from 'react';
 import './Column.css';
 import { getHoursInMinutes, formatMinutes } from '../../helpers';
 
-const Column = ({ weekday, slots }) => {
+const Column = ({ day, available, booked }) => {
 	const processRange = (start, end, status) => {
 		const res = [];
 		//FIXME: Add one hour to match test case.
@@ -24,10 +24,9 @@ const Column = ({ weekday, slots }) => {
 
 	return (
 		<div className='column-container'>
-			<h1>{weekday}</h1>
-			{slots
-				.sort((a, b) => new Date(a.start) - new Date(b.start))
-				.map((slot) => processRange(slot.start, slot.end, slot.status))}
+			<h1>{day}</h1>
+			{available.map((slot) => processRange(slot.start, slot.end, 'available'))}
+			{booked.map((slot) => processRange(slot.start, slot.end, 'booked'))}
 		</div>
 	);
 };
