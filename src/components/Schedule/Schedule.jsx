@@ -3,17 +3,17 @@ import './Schedule.css';
 // Components
 import Column from '../Column/Column';
 
-const Schedule = ({ scheduleData }) => {
-	console.log(scheduleData);
+const Schedule = ({ schedule }) => {
 	const filterByDay = (day, entry) => new Date(entry.start).getDay() === day;
 
 	return (
 		<div className='schedule-container'>
 			{[0, 1, 2, 3, 4, 5, 6].map((day) => (
 				<Column
+					key={day}
 					day={day}
-					available={scheduleData.available.filter(filterByDay.bind(null, day))}
-					booked={scheduleData.booked.filter(filterByDay.bind(null, day))}
+					available={schedule.available.filter(filterByDay.bind(null, day))}
+					booked={schedule.booked.filter(filterByDay.bind(null, day))}
 				/>
 			))}
 		</div>

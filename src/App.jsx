@@ -8,13 +8,13 @@ import { useState } from 'react';
 
 const App = () => {
 	const [curSunday, setCurSunday] = useState({ ...getPastSunday() });
-	const scheduleData = useScheduleData(curSunday);
+	const schedule = useScheduleData(curSunday);
 	console.log(curSunday);
 
 	return (
 		<div>
 			<Header setCurSunday={setCurSunday} />
-			{scheduleData && <Schedule scheduleData={scheduleData} />}
+			{schedule && <Schedule schedule={schedule} />}
 		</div>
 	);
 };
