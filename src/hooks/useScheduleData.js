@@ -11,8 +11,9 @@ const useScheduleData = ({ year, month, date }) => {
 			.then((res) => res.json())
 			.then((data) => {
 				setState(data);
-			});
-	}, [year, month, date]);
+			})
+			.catch((err) => console.log(err));
+	}, [date]);
 
 	return state;
 };

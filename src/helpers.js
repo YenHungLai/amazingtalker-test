@@ -21,3 +21,8 @@ export const getDateInfo = (dateString) => {
 		date,
 	};
 };
+
+export const getHourPlusMinutes = (date) => {
+	const dateObj = new Date(date);
+	return dateObj.getHours() * 60 + dateObj.getMinutes();
+};

@@ -10,12 +10,11 @@ const App = () => {
 	const [curSunday, setCurSunday] = useState({ ...getFirstSunday() });
 	const scheduleData = useScheduleData(curSunday);
 	console.log(curSunday);
-	console.log(scheduleData);
 
 	return (
 		<div>
 			<Header setCurSunday={setCurSunday} />
-			<Schedule scheduleData={scheduleData} />
+			{scheduleData && <Schedule scheduleData={scheduleData} />}
 		</div>
 	);
 };
