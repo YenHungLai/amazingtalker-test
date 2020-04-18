@@ -1,4 +1,4 @@
-export const getFirstSunday = () => {
+export const getPastSunday = () => {
 	const today = new Date();
 	const year = today.getFullYear();
 	const month = today.getMonth() + 1;
@@ -22,7 +22,15 @@ export const getDateInfo = (dateString) => {
 	};
 };
 
-export const getHourPlusMinutes = (date) => {
+export const getHoursInMinutes = (date) => {
 	const dateObj = new Date(date);
 	return dateObj.getHours() * 60 + dateObj.getMinutes();
+};
+
+export const formatMinutes = (minutes) => {
+	let hour = Math.floor(minutes / 60);
+	let minute = (minutes / 60 - hour) * 60;
+	if (hour < 10) hour = '0' + hour.toString();
+	if (minute < 10) minute = '0' + minute.toString();
+	return `${hour}:${minute}`;
 };

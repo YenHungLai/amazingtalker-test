@@ -1,13 +1,13 @@
 import React from 'react';
 import useScheduleData from './hooks/useScheduleData';
-import { getFirstSunday } from './helpers';
+import { getPastSunday } from './helpers';
 // Components
 import Header from './components/Header/Header';
 import Schedule from './components/Schedule/Schedule';
 import { useState } from 'react';
 
 const App = () => {
-	const [curSunday, setCurSunday] = useState({ ...getFirstSunday() });
+	const [curSunday, setCurSunday] = useState({ ...getPastSunday() });
 	const scheduleData = useScheduleData(curSunday);
 	console.log(curSunday);
 
