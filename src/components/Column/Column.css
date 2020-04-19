@@ -5,3 +5,13 @@
 	margin: 0 5px;
 	text-align: center;
 }
+
+.column-container .title-box {
+	margin: 10px 0;
+	text-transform: capitalize;
+}
+
+.column-container .time-slot {
+	padding: 3px 0;
+	border: 1px solid transparent;
+}

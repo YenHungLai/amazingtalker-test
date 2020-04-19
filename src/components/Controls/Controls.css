@@ -1,12 +1,29 @@
+.controls-container {
+	display: inline-block;
+}
+
 .controls-container button {
 	line-height: 1;
 	cursor: pointer;
+	background-color: #fff;
 	color: #606266;
 	outline: none;
 	padding: 7px 15px;
 	font-size: 12px;
 	border-radius: 3px;
 	border: 1px solid #dcdfe6;
+}
+
+.controls-container #left {
+	margin-right: -1px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.controls-container #right {
+	margin-left: 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
 }
 
 .controls-container button:hover {

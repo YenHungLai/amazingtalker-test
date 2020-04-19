@@ -13,8 +13,10 @@ const Column = ({ date, day, available, booked }) => {
 			res.push(
 				<div
 					key={time}
+					className='time-slot'
 					style={{
-						color: status === 'available' ? '#02cab9' : 'inherit',
+						color: status === 'available' ? '#02cab9' : '#b6b6b6',
+						fontWeight: status === 'available' ? '700' : 'inherit',
 					}}
 				>
 					{formatMinutes(time)}
@@ -28,9 +30,13 @@ const Column = ({ date, day, available, booked }) => {
 
 	return (
 		<div className='column-container'>
-			<h1>{WEEK_TABLE[day]}</h1>
-			<h1>{date}</h1>
-			{lessons.sort((a, b) => new Date(a.start) - new Date(b.start)).map(processTimeRange)}
+			<div className='title-box'>
+				<div>{WEEK_TABLE[day]}</div>
+				<div>{date}</div>
+			</div>
+			{lessons
+				.sort((a, b) => new Date(a.start) - new Date(b.start))
+				.map(processTimeRange)}
 		</div>
 	);
 };

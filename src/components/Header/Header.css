@@ -1,0 +1,23 @@
+.header-container .title {
+	font-size: 20px;
+	font-weight: 500;
+	margin: 20px 0;
+}
+
+.header-container .title::first-letter {
+	text-transform: capitalize;
+}
+
+.header-container .current-week {
+	display: inline-block;
+	padding-left: 15px;
+	width: 150px;
+}
+
+.header-container .timezone-info {
+	display: inline-block;
+	float: right;
+	text-align: right;
+	font-size: 12px;
+	line-height: 25px;
+}

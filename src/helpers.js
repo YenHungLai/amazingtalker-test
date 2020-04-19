@@ -34,3 +34,26 @@ export const formatMinutes = (minutes) => {
 	if (minute < 10) minute = '0' + minute.toString();
 	return `${hour}:${minute}`;
 };
+
+export const changeDate = ({ year, month, date }, amount) => {
+	const dateObj = new Date(`${month}/${date}/${year}`);
+	dateObj.setDate(dateObj.getDate() + amount);
+	return {
+		year: dateObj.getFullYear(),
+		month: dateObj.getMonth() + 1,
+		date: dateObj.getDate(),
+	};
+};
+
+export const getTimezoneInfo = () => {
+	const dateString = new Date().toString();
+	const gmtOffset = dateString.match(/GMT-\d*/)[0];
+	const timezoneName = dateString.match(/\(.*\)/)[0].replace(/\(|\)/g, '');
+	return {
+		gmtOffset,
+		timezoneName,
+	};
+};
+
+export const isObjectPropertyEqual = (obj1, obj2) =>
+	JSON.stringify(obj1) === JSON.stringify(obj2);

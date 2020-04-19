@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 const useScheduleData = ({ year, month, date }) => {
-	const [state, setState] = useState();
+	const [response, setResponse] = useState();
 
 	useEffect(() => {
 		fetch(
@@ -10,12 +10,12 @@ const useScheduleData = ({ year, month, date }) => {
 		)
 			.then((res) => res.json())
 			.then((data) => {
-				setState(data);
+				setResponse(data);
 			})
 			.catch((err) => console.log(err));
 	}, [date]);
 
-	return state;
+	return response;
 };
 
 export default useScheduleData;

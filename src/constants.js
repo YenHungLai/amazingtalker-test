@@ -10,4 +10,4 @@ export const WEEK_TABLE = {
 	6: 'sat',
 };
 
-export const THIS_SUNDAY_DATE = getThisSunday().date;
+export const THIS_SUNDAY_DATE = getThisSunday();
