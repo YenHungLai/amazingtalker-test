@@ -1,8 +1,9 @@
 import React from 'react';
 import './Column.css';
 import { getHoursInMinutes, formatMinutes } from '../../helpers';
+import { WEEK_TABLE } from '../../constants';
 
-const Column = ({ day, available, booked }) => {
+const Column = ({ date, day, available, booked }) => {
 	const processTimeRange = ({ start, end, status }) => {
 		const res = [];
 		//FIXME: Add one hour to match test case.
@@ -24,14 +25,12 @@ const Column = ({ day, available, booked }) => {
 	};
 
 	const lessons = [...available, ...booked];
-	console.log(lessons);
 
 	return (
 		<div className='column-container'>
-			<h1>{day}</h1>
-			{lessons
-				.sort((a, b) => new Date(a.start) - new Date(b.start))
-				.map(processTimeRange)}
+			<h1>{WEEK_TABLE[day]}</h1>
+			<h1>{date}</h1>
+			{lessons.sort((a, b) => new Date(a.start) - new Date(b.start)).map(processTimeRange)}
 		</div>
 	);
 };

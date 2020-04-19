@@ -1,7 +1,8 @@
 import React from 'react';
 import './Controls.css';
+import { THIS_SUNDAY_DATE } from '../../constants';
 
-const Controls = ({ setCurSunday }) => {
+const Controls = ({ curSunday, setCurSunday }) => {
 	const handleClick = (e) => {
 		if (e.target.id === 'left')
 			setCurSunday((prevState) => ({
@@ -17,7 +18,7 @@ const Controls = ({ setCurSunday }) => {
 
 	return (
 		<div className='controls-container'>
-			<button id='left' onClick={handleClick}>
+			<button id='left' onClick={handleClick} disabled={curSunday.date === THIS_SUNDAY_DATE}>
 				left
 			</button>
 			<button id='right' onClick={handleClick}>

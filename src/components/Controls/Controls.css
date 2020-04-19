@@ -13,3 +13,7 @@
 	color: #02cab9;
 	border-color: rgba(2, 202, 185, 0.95);
 }
+
+.controls-container button:disabled {
+	cursor: not-allowed;
+}
