@@ -3,8 +3,7 @@ import './Column.css';
 import { getHoursInMinutes, formatMinutes } from '../../helpers';
 
 const Column = ({ day, available, booked }) => {
-	// console.log(lessons);
-	const processRange = ({ start, end, status }) => {
+	const processTimeRange = ({ start, end, status }) => {
 		const res = [];
 		//FIXME: Add one hour to match test case.
 		start = getHoursInMinutes(start) + 60;
@@ -24,15 +23,15 @@ const Column = ({ day, available, booked }) => {
 		return res;
 	};
 
-	const lessons = [
-		...available.map((lesson) => ({ ...lesson, status: 'available' })),
-		...booked.map((lesson) => ({ ...lesson, status: 'booked' })),
-	];
+	const lessons = [...available, ...booked];
+	console.log(lessons);
 
 	return (
 		<div className='column-container'>
 			<h1>{day}</h1>
-			{lessons.sort((a, b) => new Date(a.start) - new Date(b.start)).map(processRange)}
+			{lessons
+				.sort((a, b) => new Date(a.start) - new Date(b.start))
+				.map(processTimeRange)}
 		</div>
 	);
 };

@@ -1,3 +1,9 @@
+export const getLastSunday = () => {
+	const dateObj = new Date();
+	dateObj.setDate(dateObj.getDate() - dateObj.getDay());
+	return dateObj;
+};
+
 export const getPastSunday = () => {
 	const today = new Date();
 	const year = today.getFullYear();

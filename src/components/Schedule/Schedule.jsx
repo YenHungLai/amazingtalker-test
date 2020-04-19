@@ -3,8 +3,11 @@ import './Schedule.css';
 // Components
 import Column from '../Column/Column';
 
-const Schedule = ({ schedule }) => {
+const Schedule = ({ schedule, curSunday }) => {
+	console.log(curSunday);
 	const filterByDay = (day, entry) => new Date(entry.start).getDay() === day;
+	const addStatus = (status, lesson) => ({ ...lesson, status });
+	// TODO: produce week worth of dates based on curSunday.
 
 	return (
 		<div className='schedule-container'>
@@ -12,8 +15,12 @@ const Schedule = ({ schedule }) => {
 				<Column
 					key={day}
 					day={day}
-					available={schedule.available.filter(filterByDay.bind(null, day))}
-					booked={schedule.booked.filter(filterByDay.bind(null, day))}
+					available={schedule.available
+						.filter(filterByDay.bind(null, day))
+						.map(addStatus.bind(null, 'available'))}
+					booked={schedule.booked
+						.filter(filterByDay.bind(null, day))
+						.map(addStatus.bind(null, 'booked'))}
 				/>
 			))}
 		</div>
