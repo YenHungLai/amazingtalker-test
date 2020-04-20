@@ -1,7 +1,7 @@
 import React from 'react';
 import './Controls.css';
-import { THIS_SUNDAY_DATE } from '../../constants';
-import { changeDate, isObjectPropertyEqual } from '../../helpers';
+import { THIS_SUNDAY } from '../../constants';
+import { changeDate } from '../../helpers';
 
 const Controls = ({ curSunday, setCurSunday }) => {
 	const handleClick = (e) => {
@@ -11,11 +11,7 @@ const Controls = ({ curSunday, setCurSunday }) => {
 
 	return (
 		<div className='controls-container'>
-			<button
-				id='left'
-				onClick={handleClick}
-				disabled={isObjectPropertyEqual(curSunday, THIS_SUNDAY_DATE)}
-			>
+			<button id='left' onClick={handleClick} disabled={curSunday.toString() === THIS_SUNDAY}>
 				<i className='fas fa-chevron-left'></i>
 			</button>
 			<button id='right' onClick={handleClick}>

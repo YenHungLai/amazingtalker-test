@@ -1,11 +1,11 @@
 import React from 'react';
-import { changeDate, getTimezoneInfo } from '../../helpers';
+import { changeDate, getTimezoneInfo, getDateInfo } from '../../helpers';
 import './Header.css';
 // Components
 import Controls from '../Controls/Controls';
 
 const Header = ({ curSunday, setCurSunday }) => {
-	const { year, month, date } = curSunday;
+	const { year, month, date } = getDateInfo(curSunday);
 	const nextSunday = changeDate(curSunday, 7);
 	const { gmtOffset, timezoneName } = getTimezoneInfo();
 
@@ -14,7 +14,7 @@ const Header = ({ curSunday, setCurSunday }) => {
 			<h3 className='title'>available times</h3>
 			<Controls curSunday={curSunday} setCurSunday={setCurSunday} />
 			<div className='current-week'>
-				{`${year}/${month}/${date} - ${nextSunday.date}`}
+				{`${year}/${month}/${date} - ${nextSunday.getDate()}`}
 			</div>
 			<div className='timezone-info'>
 				{`* All the timings listed are in your timezone: ${timezoneName} (${gmtOffset})`}

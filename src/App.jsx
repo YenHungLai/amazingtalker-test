@@ -7,14 +7,13 @@ import Header from './components/Header/Header';
 import Schedule from './components/Schedule/Schedule';
 
 const App = () => {
-	const [curSunday, setCurSunday] = useState({ ...getThisSunday() });
+	const [curSunday, setCurSunday] = useState(getThisSunday());
 	const schedule = useScheduleData(curSunday);
-	console.log(curSunday);
 
 	if (!schedule) {
 		return (
 			<div className='loading'>
-				<i class='fas fa-spinner fa-pulse fa-3x'></i>
+				<i className='fas fa-spinner fa-pulse fa-3x'></i>
 			</div>
 		);
 	}

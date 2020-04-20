@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { getDateInfo } from '../helpers';
 
-const useScheduleData = ({ year, month, date }) => {
+const useScheduleData = (curSunday) => {
 	const [response, setResponse] = useState();
+	const { year, month, date } = getDateInfo(curSunday);
 
 	useEffect(() => {
 		fetch(

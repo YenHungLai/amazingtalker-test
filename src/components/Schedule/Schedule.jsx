@@ -5,7 +5,6 @@ import { changeDate } from '../../helpers';
 import Column from '../Column/Column';
 
 const Schedule = ({ schedule, curSunday }) => {
-	console.log(schedule);
 	const filterByDay = (day, entry) => new Date(entry.start).getDay() === day;
 	const addStatus = (status, lesson) => ({ ...lesson, status });
 	let week = [];
@@ -18,8 +17,8 @@ const Schedule = ({ schedule, curSunday }) => {
 		<div className='schedule-container'>
 			{week.map((day, index) => (
 				<Column
-					key={day.date}
-					date={day.date}
+					key={day.getDate()}
+					date={day.getDate()}
 					day={index}
 					available={schedule.available
 						.filter(filterByDay.bind(null, index))

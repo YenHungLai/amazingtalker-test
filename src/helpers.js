@@ -1,17 +1,10 @@
 export const getThisSunday = () => {
 	const today = new Date();
-	const year = today.getFullYear();
-	const month = today.getMonth() + 1;
-	const date = today.getDate() - today.getDay();
-	return {
-		year,
-		month,
-		date,
-	};
+	today.setDate(today.getDate() - today.getDay());
+	return today;
 };
 
-export const getDateInfo = (dateString) => {
-	const dateObj = new Date(dateString);
+export const getDateInfo = (dateObj) => {
 	const year = dateObj.getFullYear();
 	const month = dateObj.getMonth() + 1;
 	const date = dateObj.getDate();
@@ -35,14 +28,10 @@ export const formatMinutes = (minutes) => {
 	return `${hour}:${minute}`;
 };
 
-export const changeDate = ({ year, month, date }, amount) => {
-	const dateObj = new Date(`${month}/${date}/${year}`);
-	dateObj.setDate(dateObj.getDate() + amount);
-	return {
-		year: dateObj.getFullYear(),
-		month: dateObj.getMonth() + 1,
-		date: dateObj.getDate(),
-	};
+export const changeDate = (dateObj, amount) => {
+	const newObj = new Date(dateObj.valueOf());
+	newObj.setDate(dateObj.getDate() + amount);
+	return newObj;
 };
 
 export const getTimezoneInfo = () => {
@@ -55,5 +44,4 @@ export const getTimezoneInfo = () => {
 	};
 };
 
-export const isObjectPropertyEqual = (obj1, obj2) =>
-	JSON.stringify(obj1) === JSON.stringify(obj2);
+export const isObjectPropertyEqual = (obj1, obj2) => JSON.stringify(obj1) === JSON.stringify(obj2);
