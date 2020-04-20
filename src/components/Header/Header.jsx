@@ -1,12 +1,12 @@
 import React from 'react';
-import { changeDate, getTimezoneInfo, getDateInfo } from '../../helpers';
+import { getNewDate, getTimezoneInfo, getDateInfo } from '../../helpers';
 import './Header.css';
 // Components
 import Controls from '../Controls/Controls';
 
 const Header = ({ curSunday, setCurSunday }) => {
 	const { year, month, date } = getDateInfo(curSunday);
-	const nextSunday = changeDate(curSunday, 7);
+	const nextSunday = getNewDate(curSunday, 7);
 	const { gmtOffset, timezoneName } = getTimezoneInfo();
 
 	return (

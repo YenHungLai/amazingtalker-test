@@ -1,12 +1,12 @@
 import React from 'react';
 import './Controls.css';
 import { THIS_SUNDAY } from '../../constants';
-import { changeDate } from '../../helpers';
+import { getNewDate } from '../../helpers';
 
 const Controls = ({ curSunday, setCurSunday }) => {
 	const handleClick = (e) => {
-		if (e.target.id === 'left') setCurSunday(changeDate(curSunday, -7));
-		else setCurSunday(changeDate(curSunday, 7));
+		if (e.target.id === 'left') setCurSunday(getNewDate(curSunday, -7));
+		else setCurSunday(getNewDate(curSunday, 7));
 	};
 
 	return (

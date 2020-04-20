@@ -1,6 +1,6 @@
 import { getThisSunday } from './helpers';
 
-export const WEEK_TABLE = {
+export const WEEK_NAMES = {
 	0: 'sun',
 	1: 'mon',
 	2: 'tue',

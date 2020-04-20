@@ -1,7 +1,7 @@
 import React from 'react';
 import './Column.css';
 import { getHoursInMinutes, formatMinutes } from '../../helpers';
-import { WEEK_TABLE } from '../../constants';
+import { WEEK_NAMES } from '../../constants';
 
 const Column = ({ date, day, available, booked }) => {
 	const processTimeRange = ({ start, end, status }) => {
@@ -31,12 +31,10 @@ const Column = ({ date, day, available, booked }) => {
 	return (
 		<div className='column-container'>
 			<div className='title-box'>
-				<div>{WEEK_TABLE[day]}</div>
+				<div>{WEEK_NAMES[day]}</div>
 				<div>{date}</div>
 			</div>
-			{lessons
-				.sort((a, b) => new Date(a.start) - new Date(b.start))
-				.map(processTimeRange)}
+			{lessons.sort((a, b) => new Date(a.start) - new Date(b.start)).map(processTimeRange)}
 		</div>
 	);
 };

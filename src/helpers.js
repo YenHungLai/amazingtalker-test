@@ -28,7 +28,7 @@ export const formatMinutes = (minutes) => {
 	return `${hour}:${minute}`;
 };
 
-export const changeDate = (dateObj, amount) => {
+export const getNewDate = (dateObj, amount) => {
 	const newObj = new Date(dateObj.valueOf());
 	newObj.setDate(dateObj.getDate() + amount);
 	return newObj;
