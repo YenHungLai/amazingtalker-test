@@ -1,10 +1,10 @@
 .App {
-	max-width: 800px;
-	padding: 0 10px;
-	margin: auto;
+  max-width: 800px;
+  padding: 0 10px;
+  margin: auto;
 }
 
 .loading {
-	text-align: center;
-	margin-top: 10%;
+  text-align: center;
+  margin-top: 10%;
 }
