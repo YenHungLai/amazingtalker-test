@@ -11,3 +11,5 @@ export const WEEK_NAMES = {
 };
 
 export const THIS_SUNDAY = getThisSunday().toString();
+
+export const TODAY = new Date().valueOf();

@@ -43,5 +43,3 @@ export const getTimezoneInfo = () => {
 		timezoneName,
 	};
 };
-
-export const isObjectPropertyEqual = (obj1, obj2) => JSON.stringify(obj1) === JSON.stringify(obj2);

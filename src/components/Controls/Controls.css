@@ -6,12 +6,15 @@
 	line-height: 1;
 	cursor: pointer;
 	background-color: #fff;
-	color: #606266;
 	outline: none;
 	padding: 7px 15px;
 	font-size: 12px;
 	border-radius: 3px;
 	border: 1px solid #dcdfe6;
+}
+
+.controls-container button > i {
+	color: #606266;
 }
 
 .controls-container #left {
@@ -27,10 +30,22 @@
 }
 
 .controls-container button:hover {
-	color: #02cab9;
 	border-color: rgba(2, 202, 185, 0.95);
+}
+
+.controls-container button:hover > i {
+	color: #02cab9;
 }
 
 .controls-container button:disabled {
 	cursor: not-allowed;
+	border-color: #ebeef5;
+}
+
+.controls-container button:disabled > i {
+	color: #c0c4cc;
+}
+
+.controls-container button:disabled:hover {
+	border-color: #ebeef5;
 }
