@@ -18,6 +18,8 @@ const App = () => {
     );
   }
 
+  console.log(schedule);
+
   return (
     <div className="App">
       <Header curSunday={curSunday} setCurSunday={setCurSunday} />

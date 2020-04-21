@@ -9,7 +9,7 @@ const useScheduleData = (curSunday) => {
   useEffect(() => {
     setIsLoading(true);
     fetch(
-        `https://cors-anywhere.herokuapp.com/https://api.amazingtalker.com/v1/guest/teachers/amy-estrada/schedule?started_at=${year}-${month}-${date}T06%253A00%253A00.000Z`,
+        `https://cors-anywhere.herokuapp.com/https://api.amazingtalker.com/v1/guest/teachers/amy-estrada/schedule?started_at=${year}-${month}-${date}T07%253A00%253A00.000Z`,
     )
         .then((res) => res.json())
         .then((data) => {

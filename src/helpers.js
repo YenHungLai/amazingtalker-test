@@ -36,7 +36,7 @@ export const getNewDate = (dateObj, amount) => {
 
 export const getTimezoneInfo = () => {
   const dateString = new Date().toString();
-  const gmtOffset = dateString.match(/GMT-\d*/)[0];
+  const gmtOffset = dateString.match(/GMT.\d*/)[0];
   const timezoneName = dateString.match(/\(.*\)/)[0].replace(/\(|\)/g, '');
   return {
     gmtOffset,
