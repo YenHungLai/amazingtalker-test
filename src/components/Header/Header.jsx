@@ -10,7 +10,11 @@ const Header = ({curSunday, setCurSunday}) => {
   const {year, month, date} = getDateInfo(curSunday);
   const nextSunday = getNewDate(curSunday, 7);
   const {gmtOffset, timezoneName} = getTimezoneInfo();
-  const {t} = useTranslation();
+  const {t, i18n} = useTranslation();
+
+  const selectLanguage = (e) => {
+    i18n.changeLanguage(e.target.value);
+  };
 
   return (
     <div className='header-container'>
@@ -22,6 +26,13 @@ const Header = ({curSunday, setCurSunday}) => {
       <div className='timezone-info'>
         {t('timezone', {timezoneName, gmtOffset})}
       </div>
+      <span className='select-language'>
+        <label htmlFor='language'>language</label>
+        <select id='language' onChange={selectLanguage}>
+          <option value='zh'>chinese</option>
+          <option value='en'>english</option>
+        </select>
+      </span>
     </div>
   );
 };

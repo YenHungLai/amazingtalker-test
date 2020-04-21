@@ -20,6 +20,13 @@ export const getHoursInMinutes = (date) => {
   return dateObj.getHours() * 60 + dateObj.getMinutes();
 };
 
+export const getDiffInMinutes = (start, end) => {
+  const startDate = new Date(start);
+  const endDate = new Date(end);
+  const diff = Math.abs(startDate.valueOf() - endDate.valueOf());
+  return Math.floor(diff / 1000 / 60);
+};
+
 export const formatMinutes = (minutes) => {
   let hour = Math.floor(minutes / 60);
   let minute = (minutes / 60 - hour) * 60;
